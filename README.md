@@ -2,7 +2,7 @@
 
 A portfolio to showcase my projects and blog posts
 
-To Visit App:
+To Visit Portfolio:
 [Click here](https://priyavaidya.com/)
 
 

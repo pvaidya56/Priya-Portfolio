@@ -89,6 +89,28 @@ body {
     -ms-transition: none !important;
     transition: none !important; }
 
+.switch {
+      justify-items: flex-start;
+      margin-left: 5rem;
+  }
+.inner-switch {
+      display: inline-block;
+      cursor: pointer;
+      border: 1px solid #555;
+      border-radius: 0.5rem;
+      width: 3.125rem;
+      text-align: center;
+      font-size: 0.90rem;
+      padding: 0.1975rem;
+      margin-left: 0.3125rem;
+  }
+
+.dark,
+.dark * {
+      background-color: #222;
+      color: #e6e6e6;
+      border-color: #e6e6e6;
+  }
 /* Type */
 body, input, select, textarea {
   color: #7f888f;

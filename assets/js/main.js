@@ -233,7 +233,15 @@
 					.trigger('resize.sidebar-lock');
 
 				});
-
+		$( ".inner-switch" ).on("click", function() {
+					if( $( "body" ).hasClass( "dark" )) {
+					  $( "body" ).removeClass( "dark" );
+					  $( ".inner-switch" ).text( "DARK" );
+					} else {
+					  $( "body" ).addClass( "dark" );
+					  $( ".inner-switch" ).text( "LIGHT" );
+					}
+				});
 	// Menu.
 		var $menu = $('#menu'),
 			$menu_openers = $menu.children('ul').find('.opener');

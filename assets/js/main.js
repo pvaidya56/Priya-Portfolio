@@ -233,15 +233,46 @@
 					.trigger('resize.sidebar-lock');
 
 				});
+
+	//DARK MODE FUNCTIONALITY 
+		// $( ".inner-switch" ).on("click", function() {
+		// 			if( $( "body" ).hasClass( "dark" )) {
+		// 			  $( "body" ).removeClass( "dark" );
+		// 			  $( ".inner-switch" ).text( "DARK" );
+		// 			} else {
+		// 			  $( "body" ).addClass( "dark" );
+		// 			  $( ".inner-switch" ).text( "LIGHT" );
+		// 			}
+		// 		});
+		$(document).ready(function() {
+			if (localStorage.getItem("mode") == "dark") {
+				$( "body" ).addClass( "dark" );
+				$( ".inner-switch" ).text( "LIGHT" );
+			} else if (localStorage.getItem("mode") == "light"){
+				$( "body" ).removeClass( "dark" );
+				$( ".inner-switch" ).text( "DARK MODE" );
+			}
+			var mq = window.matchMedia( '(prefers-color-scheme: dark)' );
+			if (localStorage.getItem("mode") == "light"){
+				$( "body" ).removeClass( "dark" );
+				$( ".inner-switch" ).text( "DARK MODE" );
+			} else if ( mq.matches ){
+				$( "body" ).addClass( "dark" );
+				$( ".inner-switch" ).text( "LIGHT" );
+			}
+		});
+		 
 		$( ".inner-switch" ).on("click", function() {
-					if( $( "body" ).hasClass( "dark" )) {
-					  $( "body" ).removeClass( "dark" );
-					  $( ".inner-switch" ).text( "DARK" );
-					} else {
-					  $( "body" ).addClass( "dark" );
-					  $( ".inner-switch" ).text( "LIGHT" );
-					}
-				});
+			if( $( "body" ).hasClass( "dark" )) {
+				$( "body" ).removeClass( "dark" );
+				$( ".inner-switch" ).text( "DARK MODE" );
+				localStorage.setItem("mode","light");
+			} else {
+				$( "body" ).addClass( "dark" );
+				$( ".inner-switch" ).text( "LIGHT" );
+				localStorage.setItem("mode","dark");
+			}
+		});
 	// Menu.
 		var $menu = $('#menu'),
 			$menu_openers = $menu.children('ul').find('.opener');

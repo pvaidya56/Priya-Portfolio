@@ -250,12 +250,12 @@
 				$( ".inner-switch" ).text( "LIGHT" );
 			} else if (localStorage.getItem("mode") == "light"){
 				$( "body" ).removeClass( "dark" );
-				$( ".inner-switch" ).text( "DARK MODE" );
+				$( ".inner-switch" ).text( "DARK" );
 			}
 			var mq = window.matchMedia( '(prefers-color-scheme: dark)' );
 			if (localStorage.getItem("mode") == "light"){
 				$( "body" ).removeClass( "dark" );
-				$( ".inner-switch" ).text( "DARK MODE" );
+				$( ".inner-switch" ).text( "DARK" );
 			} else if ( mq.matches ){
 				$( "body" ).addClass( "dark" );
 				$( ".inner-switch" ).text( "LIGHT" );
@@ -265,7 +265,7 @@
 		$( ".inner-switch" ).on("click", function() {
 			if( $( "body" ).hasClass( "dark" )) {
 				$( "body" ).removeClass( "dark" );
-				$( ".inner-switch" ).text( "DARK MODE" );
+				$( ".inner-switch" ).text( "DARK" );
 				localStorage.setItem("mode","light");
 			} else {
 				$( "body" ).addClass( "dark" );
